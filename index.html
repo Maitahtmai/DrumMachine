@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <!-- Bootstrap Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Color Theme Toggle script handler from colorTheme.js -->
+    <!-- <script src="./js/colorTheme.js"></script> -->
+    <!-- Drum Machine project -->
+    <title> Jimmy Hendrix Drum Machine </title>
+    <!-- Handle Player events -->
+    <script>
+      const play = (str) => {
+        const audio = document.getElementById(str);
+        audio.play()
+        console.log(str, "<= The string passed in")
+
+        if (str === "Q" || str === "q") {
+          document.getElementById('display').innerText = "Splash Choke";
+        } else if (str === "W" || str === "w") {
+          document.getElementById('display').innerText = "Crsh Bell";
+        } else if (str === "E" || str === "e") {
+          document.getElementById('display').innerText = "Crsh Choke";
+        } else if (str === "A" || str === "a") {
+          document.getElementById('display').innerText = "Star Classic";
+        } else if (str === "S" || str === "s") {
+          document.getElementById('display').innerText = "Flams";
+        } else if (str === "D" || str === "d") {
+          document.getElementById('display').innerText = "High Hats CL";
+        } else if (str === "Z" || str === "z") {
+          document.getElementById('display').innerText = "High Hats OP";
+        } else if (str === "X" || str === "x") {
+          document.getElementById('display').innerText = "High Hats PDL";
+        } else if (str === "C" || str === "c") {
+          document.getElementById('display').innerText = "Kick Yamaha";
+        }
+      };
+
+      window.document.onkeyup = (event) => {
+        const keyStroke = event.key
+
+        if (keyStroke === "Q" || keyStroke === "q") {
+          play("Q");
+        } else if (keyStroke === "W" || keyStroke === "w") {
+          play("W");
+        } else if (keyStroke === "E" || keyStroke === "e") {
+          play("E");
+        } else if (keyStroke === "A" || keyStroke === "a") {
+          play("A");
+        } else if (keyStroke === "S" || keyStroke === "s") {
+          play("S");
+        } else if (keyStroke === "D" || keyStroke === "d") {
+          play("D");
+        } else if (keyStroke === "Z" || keyStroke === "z") {
+          play("Z");
+        } else if (keyStroke === "X" || keyStroke === "x") {
+          play("X");
+        } else if (keyStroke === "C" || keyStroke === "c") {
+          play("C");
+        }
+
+      }
+    </script>
+  </head>
+  <body>
+    <h1 class="text-center py-3 my-2"> Jimmy Hendrix Quote Machine </h1>
+    <div class="container d-grid gap-2 d-md-block" id="drum-machine">
+      <div class="card py-2">
+        <div class="card-body text-center" id="display">Drumpad Title</div>
+      </div>
+      <button type="button" class="drum-pad btn btn-primary" id="drum-0" data-bs-toggle="button"onclick="play('Q')">
+        Q
+        <audio src="./clip/6-SplashCHOKE-V06-SABIAN-HH-6.wav" class="clip" id="Q"></audio>
+      </button>
+      <button type="button" class="drum-pad btn btn-secondary" id="drum-1" data-bs-toggle="button"onclick="play('W')">
+        W
+        <audio src="./clip/14-CrshBELL-V04-SABIAN-14.wav" class="clip" id="W"></audio>
+      </button>
+      <button type="button" class="drum-pad btn btn-success" id="drum-2" data-bs-toggle="button"onclick="play('E')">
+        E
+        <audio src="./clip/18-CrshCHOKE-V05-SABIAN-18.wav" class="clip" id="E"></audio>
+      </button>
+      <button type="button" class="drum-pad btn btn-danger" id="drum-3" data-bs-toggle="button"onclick="play('A')">
+        A
+        <audio src="./clip/FLAM10-V01-StarClassic-10x10.wav" class="clip" id="A"></audio>
+      </button>
+      <button type="button" class="drum-pad btn btn-warning" id="drum-4" data-bs-toggle="button"onclick="play('S')">
+        S
+        <audio src="./clip/FLAMS-V10-CW-6x13.wav" class="clip" id="S"></audio>
+      </button>
+      <button type="button" class="drum-pad btn btn-info" id="drum-5" data-bs-toggle="button"onclick="play('D')">
+        D
+        <audio src="./clip/HHats-CL-V10-SABIAN-AAX.wav" class="clip" id="D"></audio>
+      </button>
+      <button type="button" class="drum-pad btn btn-light" id="drum-6" data-bs-toggle="button"onclick="play('Z')">
+        Z
+        <audio src="./clip/HHats-OP-V08-SABIAN-AAX.wav" class="clip" id="Z"></audio>
+      </button>
+      <button type="button" class="drum-pad btn btn-dark" id="drum-7" data-bs-toggle="button"onclick="play('X')">
+        X
+        <audio src="./clip/HHats-PDL-V05-SABIAN-AAX.wav" class="clip" id="X"></audio>
+      </button>
+      <button type="button" class="drum-pad btn btn-primary" id="drum-8" data-bs-toggle="button"onclick="play('C')">
+        C
+        <audio src="./clip/Kick-V12-Yamaha-16x16.wav" class="clip" id="C"></audio>
+      </button>
+
+    </div>
+    <!-- Bootstrap Scripts "min" require bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <!-- Propper.js, then jQuery and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Run Test with freeCodeCam Test Suite -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
